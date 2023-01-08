@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+from sklearn import metrics
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -63,8 +64,8 @@ user_result = rf.predict(user_data)
 st.subheader('Your Report:')
 output = ''
 if user_result[0] == 0:
-    output = 'You are healthy!'
+    output = 'You are not diabetic :)'
 else:
-    output = 'You are not healthy :|'
+    output = 'You are diabetic :('
 
 st.write(output)
