@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-from sklearn import metrics
-from sklearn.metrics import accuracy_score
+# from sklearn import metrics
+# from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
@@ -57,8 +57,8 @@ user_data = user_report()
 rf = RandomForestClassifier()
 rf.fit(x_train, y_train)
 
-st.subheader('Accuracy: ')
-st.write(str(accuracy_score(y_test, rf.predict(x_test)) * 100) + '%')
+# st.subheader('Accuracy: ')
+# st.write(str(accuracy_score(y_test, rf.predict(x_test)) * 100) + '%')
 
 user_result = rf.predict(user_data)
 st.subheader('Your Report:')
